@@ -6,8 +6,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static net.mirwaldt.aoc.day06.LightController.LightState.OFF;
-import static net.mirwaldt.aoc.day06.LightController.LightState.ON;
+import static net.mirwaldt.aoc.day06.SwitchableLightController.LightState.OFF;
+import static net.mirwaldt.aoc.day06.SwitchableLightController.LightState.ON;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -18,14 +18,14 @@ public class PartOneLightControllerTest {
 
     @ParameterizedTest
     @MethodSource("lightController")
-    void test_allOffAtStart(LightController lightController) {
+    void test_allOffAtStart(SwitchableLightController lightController) {
         assertTrue(lightController.isLightState(OFF, 0, 0, 999, 999));
         assertEquals(0, lightController.countLightsOn());
     }
 
     @ParameterizedTest
     @MethodSource("lightController")
-    void test_turnOnAll(LightController lightController) {
+    void test_turnOnAll(SwitchableLightController lightController) {
         assertTrue(lightController.isLightState(OFF, 0, 0, 999, 999));
         assertEquals(0, lightController.countLightsOn());
         lightController.turnOn(0, 0, 999, 999);
@@ -35,7 +35,7 @@ public class PartOneLightControllerTest {
 
     @ParameterizedTest
     @MethodSource("lightController")
-    void test_turnOffAll(LightController lightController) {
+    void test_turnOffAll(SwitchableLightController lightController) {
         assertTrue(lightController.isLightState(OFF, 0, 0, 999, 999));
         assertEquals(0, lightController.countLightsOn());
         lightController.turnOn(0, 0, 999, 999);
@@ -48,7 +48,7 @@ public class PartOneLightControllerTest {
 
     @ParameterizedTest
     @MethodSource("lightController")
-    void test_toggleAllFromOffToOn(LightController lightController) {
+    void test_toggleAllFromOffToOn(SwitchableLightController lightController) {
         assertTrue(lightController.isLightState(OFF, 0, 0, 999, 999));
         assertEquals(0, lightController.countLightsOn());
         lightController.toggle(0, 0, 999, 999);
@@ -58,7 +58,7 @@ public class PartOneLightControllerTest {
 
     @ParameterizedTest
     @MethodSource("lightController")
-    void test_toggleAllFromOnToOff(LightController lightController) {
+    void test_toggleAllFromOnToOff(SwitchableLightController lightController) {
         assertTrue(lightController.isLightState(OFF, 0, 0, 999, 999));
         assertEquals(0, lightController.countLightsOn());
         lightController.turnOn(0, 0, 999, 999);
@@ -71,7 +71,7 @@ public class PartOneLightControllerTest {
 
     @ParameterizedTest
     @MethodSource("lightController")
-    void test_turnOnSomewhere(LightController lightController) {
+    void test_turnOnSomewhere(SwitchableLightController lightController) {
         assertTrue(lightController.isLightState(OFF, 0, 0, 999, 999));
         assertEquals(0, lightController.countLightsOn());
         lightController.turnOn(10, 20, 49, 29);
@@ -85,7 +85,7 @@ public class PartOneLightControllerTest {
 
     @ParameterizedTest
     @MethodSource("lightController")
-    void test_turnOffSomewhere(LightController lightController) {
+    void test_turnOffSomewhere(SwitchableLightController lightController) {
         assertTrue(lightController.isLightState(OFF, 0, 0, 999, 999));
         assertEquals(0, lightController.countLightsOn());
         lightController.turnOn(0, 0, 999, 999);
@@ -102,7 +102,7 @@ public class PartOneLightControllerTest {
 
     @ParameterizedTest
     @MethodSource("lightController")
-    void test_toggleSomewhere(LightController lightController) {
+    void test_toggleSomewhere(SwitchableLightController lightController) {
         assertTrue(lightController.isLightState(OFF, 0, 0, 999, 999));
         assertEquals(0, lightController.countLightsOn());
         lightController.turnOn(10, 20, 39, 29);

@@ -1,6 +1,6 @@
 package net.mirwaldt.aoc.day06;
 
-public interface LightController {
+public interface SwitchableLightController {
     enum LightState {
         ON, OFF
     }

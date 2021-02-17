@@ -6,14 +6,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public class PartOneLightControllerMain {
+public class PartTwoLightControllerMain {
     private static final String TURN_ON = "turn on";
     private static final String TURN_OFF = "turn off";
     private static final String TOGGLE = "toggle";
 
     public static void main(String[] args) throws IOException {
         final List<String> lines = Files.readAllLines(Path.of("input.txt"), StandardCharsets.US_ASCII);
-        final PartOneLightController partOneLightController = new PartOneLightController();
+        final BrightnessLightController partOneLightController = new PartTwoLightController();
         int lineCounter = 1;
         for (String line : lines) {
             String[] tokens = line.split(" ");
@@ -46,6 +46,6 @@ public class PartOneLightControllerMain {
             }
             lineCounter++;
         }
-        System.out.println(partOneLightController.countLightsOn()); // result - 569999
+        System.out.println(partOneLightController.countBrightness()); // result : 17836115
     }
 }

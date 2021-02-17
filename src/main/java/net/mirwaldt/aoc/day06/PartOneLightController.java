@@ -1,9 +1,9 @@
 package net.mirwaldt.aoc.day06;
 
-import static net.mirwaldt.aoc.day06.LightController.LightState.OFF;
-import static net.mirwaldt.aoc.day06.LightController.LightState.ON;
+import static net.mirwaldt.aoc.day06.SwitchableLightController.LightState.OFF;
+import static net.mirwaldt.aoc.day06.SwitchableLightController.LightState.ON;
 
-public class PartOneLightController implements LightController {
+public class PartOneLightController implements SwitchableLightController {
     private final LightState[][] board = new LightState[1000][1000];
 
     public PartOneLightController() {
