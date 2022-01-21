@@ -1,4 +1,4 @@
-package net.mirwaldt.aoc.day06;
+package net.mirwaldt.aoc.year2015.day06;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

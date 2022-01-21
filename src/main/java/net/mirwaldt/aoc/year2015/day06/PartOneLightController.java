@@ -1,7 +1,4 @@
-package net.mirwaldt.aoc.day06;
-
-import static net.mirwaldt.aoc.day06.SwitchableLightController.LightState.OFF;
-import static net.mirwaldt.aoc.day06.SwitchableLightController.LightState.ON;
+package net.mirwaldt.aoc.year2015.day06;
 
 public class PartOneLightController implements SwitchableLightController {
     private final LightState[][] board = new LightState[1000][1000];
@@ -14,7 +11,7 @@ public class PartOneLightController implements SwitchableLightController {
     public void turnOn(int startX, int startY, int endX, int endY) {
         for (int x = startX; x <= endX; x++) {
             for (int y = startY; y <= endY; y++) {
-                board[x][y] = ON;
+                board[x][y] = LightState.ON;
             }
         }
     }
@@ -23,7 +20,7 @@ public class PartOneLightController implements SwitchableLightController {
     public void turnOff(int startX, int startY, int endX, int endY) {
         for (int x = startX; x <= endX; x++) {
             for (int y = startY; y <= endY; y++) {
-                board[x][y] = OFF;
+                board[x][y] = LightState.OFF;
             }
         }
     }
@@ -32,10 +29,10 @@ public class PartOneLightController implements SwitchableLightController {
     public void toggle(int startX, int startY, int endX, int endY) {
         for (int x = startX; x <= endX; x++) {
             for (int y = startY; y <= endY; y++) {
-                if (board[x][y] == ON) {
-                    board[x][y] = OFF;
+                if (board[x][y] == LightState.ON) {
+                    board[x][y] = LightState.OFF;
                 } else {
-                    board[x][y] = ON;
+                    board[x][y] = LightState.ON;
                 }
             }
         }
@@ -46,7 +43,7 @@ public class PartOneLightController implements SwitchableLightController {
         int lightsOnCounter = 0;
         for (int x = 0; x <= 999; x++) {
             for (int y = 0; y <= 999; y++) {
-                if (getLightState(x, y) == ON) {
+                if (getLightState(x, y) == LightState.ON) {
                     lightsOnCounter++;
                 }
             }
